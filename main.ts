@@ -1,4 +1,4 @@
-scene.onOverlapTile(SpriteKind.Player, sprites.castle.tileDarkGrass3, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Player, assets.tile`transparency16`, function (sprite, location) {
     game.over(true)
 })
 let mySprite = sprites.create(img`
@@ -29,6 +29,7 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)
 controller.moveSprite(mySprite)
 tiles.setTilemap(tilemap`level1`)
-tiles.placeOnRandomTile(mySprite, sprites.builtin.forestTiles0)
+tiles.placeOnRandomTile(mySprite, assets.tile`transparency16`)
 scene.cameraFollowSprite(mySprite)
 info.startCountdown(10)
+music.play(music.createSong(hex`0064000408030205001c000f0a006400f4010a00000400000000000000000000000000000000026c0000000800010d08001000010c10001800010a18001c0001081c001e00010a1e002000010c20002800010d28003000010c30003800010a38003c0001083c003e00010a3e004000010c40004800010d48005000010c50005800010a58005c0001085c005e00010a5e006000010c08001c000e050046006603320000040a002d000000640014000132000201000260000000020001240200040001200c000e0001250e001000012218001a0001221a001c00011e2400260001202600280001243000320001243200340001203c003e0001253e004000012248004a0001224a004c00011e540056000120560058000124`), music.PlaybackMode.LoopingInBackground)
